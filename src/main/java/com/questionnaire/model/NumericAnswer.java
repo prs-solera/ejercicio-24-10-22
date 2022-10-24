@@ -68,4 +68,12 @@ public class NumericAnswer {
     public void setUser(User user) {
         this.user = user;
     }
+
+    public boolean equals(Object o) {
+        if (o instanceof NumericAnswer) {
+            return getId().equals(((NumericAnswer) o).getId());
+        } else {
+            return false;
+        }
+    }
 }

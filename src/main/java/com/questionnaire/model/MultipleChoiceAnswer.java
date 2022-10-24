@@ -47,5 +47,11 @@ public class MultipleChoiceAnswer {
         this.answerDatetime = answerDatetime;
     }
 
-    
+    public boolean equals(Object o) {
+        if (o instanceof MultipleChoiceAnswer) {
+            return getId().equals(((MultipleChoiceAnswer) o).getId());
+        } else {
+            return false;
+        }
+    }
 }

@@ -9,14 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.questionnaire.exceptions.IllegalModelException;
-import com.questionnaire.model.BooleanQuestion;
-import com.questionnaire.services.BooleanQuestionService;
+import com.questionnaire.model.NumericQuestion;
+import com.questionnaire.services.NumericQuestionService;
 
 @SpringBootTest
-public class BooleanQuestionServiceTests {
+public class NumericQuestionServiceTests {
     
     @Autowired
-    private BooleanQuestionService service;
+    private NumericQuestionService service;
 
     @BeforeEach
     public void before() {
@@ -25,7 +25,7 @@ public class BooleanQuestionServiceTests {
 
     @Test
     public void save_normal() throws IllegalModelException {
-        BooleanQuestion q = new BooleanQuestion();
+        NumericQuestion q = new NumericQuestion();
 
         q.setTitle("Title");
 
@@ -36,7 +36,7 @@ public class BooleanQuestionServiceTests {
 
     @Test
     public void save_abnormal_nullTitle() throws IllegalModelException {
-        BooleanQuestion q = new BooleanQuestion();
+        NumericQuestion q = new NumericQuestion();
 
         q.setTitle(null);
 
@@ -45,7 +45,7 @@ public class BooleanQuestionServiceTests {
 
     @Test
     public void save_abnormal_emptyTitle() throws IllegalModelException {
-        BooleanQuestion q = new BooleanQuestion();
+        NumericQuestion q = new NumericQuestion();
 
         q.setTitle("");
 

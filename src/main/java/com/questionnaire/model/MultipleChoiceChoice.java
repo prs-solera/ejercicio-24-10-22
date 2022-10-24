@@ -47,5 +47,11 @@ public class MultipleChoiceChoice {
         this.title = title;
     }
 
-    
+    public boolean equals(Object o) {
+        if (o instanceof MultipleChoiceChoice) {
+            return getId().equals(((MultipleChoiceChoice) o).getId());
+        } else {
+            return false;
+        }
+    }
 }

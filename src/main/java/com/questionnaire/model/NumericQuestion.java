@@ -40,5 +40,11 @@ public class NumericQuestion {
         this.title = title;
     }
    
-    
+    public boolean equals(Object o) {
+        if (o instanceof NumericQuestion) {
+            return getId().equals(((NumericQuestion) o).getId());
+        } else {
+            return false;
+        }
+    }
 }
