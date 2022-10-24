@@ -16,19 +16,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.questionnaire.exceptions.IllegalModelException;
-import com.questionnaire.model.BooleanQuestion;
-import com.questionnaire.services.BooleanQuestionService;
+import com.questionnaire.model.NumericQuestion;
+import com.questionnaire.services.NumericQuestionService;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/api/boolq")
-public class BooleanQuestionController {
+@RequestMapping("/api/numq")
+public class NumericQuestionController {
     
     @Autowired
-    private BooleanQuestionService service;
+    private NumericQuestionService service;
 
     @GetMapping
-    public ResponseEntity<List<BooleanQuestion>> getAll() {
+    public ResponseEntity<List<NumericQuestion>> getAll() {
         return ResponseEntity.ok(service.findAll());
     }
 
@@ -36,7 +36,7 @@ public class BooleanQuestionController {
     public ResponseEntity create(@RequestBody Map<String,String> params) {
         String title = params.getOrDefault("title", "");
 
-        BooleanQuestion q = new BooleanQuestion();
+        NumericQuestion q = new NumericQuestion();
         q.setTitle(title);
 
         try {
@@ -52,7 +52,7 @@ public class BooleanQuestionController {
     public ResponseEntity edit(@RequestBody Map<String,String> params) {
         String title = params.getOrDefault("title", "");
         Integer id = Integer.parseInt(params.getOrDefault("id", "0"));
-        BooleanQuestion q = service.findById(id);
+        NumericQuestion q = service.findById(id);
         
         if (q == null) {
             return ResponseEntity.notFound().build();
@@ -70,7 +70,7 @@ public class BooleanQuestionController {
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity delete(@PathVariable(value = "id") Integer id) {
-        BooleanQuestion q = service.findById(id);
+        NumericQuestion q = service.findById(id);
         if (q == null) {
             return ResponseEntity.notFound().build();
         }
