@@ -11,13 +11,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "booleananswer")
+@Table(name = "bulanswer")
 public class BooleanAnswer {
     @Id
     @GeneratedValue
     private Integer id;
 
-    private Boolean value;
+    private Boolean answerval;
 
     private LocalDate answerDatetime;
 
@@ -37,20 +37,36 @@ public class BooleanAnswer {
         this.id = id;
     }
 
-    public Boolean getValue() {
-        return value;
-    }
-
-    public void setValue(Boolean value) {
-        this.value = value;
-    }
-
     public LocalDate getAnswerDatetime() {
         return answerDatetime;
     }
 
     public void setAnswerDatetime(LocalDate answerDatetime) {
         this.answerDatetime = answerDatetime;
+    }
+
+    public Boolean getAnswerval() {
+        return answerval;
+    }
+
+    public void setAnswerval(Boolean answerval) {
+        this.answerval = answerval;
+    }
+
+    public BooleanQuestion getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(BooleanQuestion question) {
+        this.question = question;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     

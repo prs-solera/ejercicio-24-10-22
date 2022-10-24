@@ -12,7 +12,7 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name = "booleanquestion")
+@Table(name = "bulquestion")
 public class BooleanQuestion {
     @Id
     @GeneratedValue
