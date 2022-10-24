@@ -3,9 +3,9 @@ package com.questionnaire.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.questionnaire.model.User;
+import com.questionnaire.model.MultipleChoiceQuestion;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Integer> {
-    User findByUsername(String username);
+public interface MultipleChoiceQuestionRepository extends JpaRepository<MultipleChoiceQuestion, Integer> {
+    
 }

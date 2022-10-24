@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
 
+import com.questionnaire.exceptions.IllegalModelException;
 import com.questionnaire.model.User;
 import com.questionnaire.services.UserService;
 
@@ -19,7 +20,7 @@ public class Autopopulate {
     private UserService userService;
 
     @PostConstruct
-    public void auto() {
+    public void auto() throws IllegalModelException {
         User user = new User();
 
         List<String> roles = new ArrayList<String>();

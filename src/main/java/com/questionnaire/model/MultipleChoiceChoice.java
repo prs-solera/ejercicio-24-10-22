@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class MultipleChoiceChoice {
     @Id
     @GeneratedValue
-    private Integer id;
+    private Integer id = 0;
 
     private String title;
     

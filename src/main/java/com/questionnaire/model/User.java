@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class User {
     @Id
     @GeneratedValue
-    private Integer id;
+    private Integer id = 0;
 
     @Column(nullable = false, unique = true)
     private String username;
@@ -98,5 +98,11 @@ public class User {
         this.multipleChoiceAnswers = multipleChoiceAnswers;
     }
 
-    
+    public boolean equals(Object o) {
+        if (o instanceof User) {
+            return getId().equals(((User) o).getId());
+        } else {
+            return false;
+        }
+    }
 }

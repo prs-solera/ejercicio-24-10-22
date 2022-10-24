@@ -15,7 +15,7 @@ import javax.persistence.Table;
 public class NumericAnswer {
     @Id
     @GeneratedValue
-    private Integer id;
+    private Integer id = 0;
 
     private Integer answerval;
 

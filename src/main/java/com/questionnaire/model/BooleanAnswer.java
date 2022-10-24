@@ -15,7 +15,7 @@ import javax.persistence.Table;
 public class BooleanAnswer {
     @Id
     @GeneratedValue
-    private Integer id;
+    private Integer id = 0;
 
     private Boolean answerval;
 
@@ -69,5 +69,11 @@ public class BooleanAnswer {
         this.user = user;
     }
 
-    
+    public boolean equals(Object o) {
+        if (o instanceof BooleanAnswer) {
+            return getId().equals(((BooleanAnswer) o).getId());
+        } else {
+            return false;
+        }
+    }
 }

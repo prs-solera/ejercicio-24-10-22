@@ -3,6 +3,7 @@ package com.questionnaire.model;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -16,8 +17,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class BooleanQuestion {
     @Id
     @GeneratedValue
-    private Integer id;
+    private Integer id = 0;
 
+    @Column(nullable = false)
     private String title;
 
     @OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE)
@@ -40,5 +42,11 @@ public class BooleanQuestion {
         this.title = title;
     }
 
-    
+    public boolean equals(Object o) {
+        if (o instanceof BooleanQuestion) {
+            return getId().equals(((BooleanQuestion) o).getId());
+        } else {
+            return false;
+        }
+    }
 }
