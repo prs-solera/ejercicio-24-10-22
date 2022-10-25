@@ -20,7 +20,7 @@ import com.questionnaire.model.BooleanQuestion;
 import com.questionnaire.services.BooleanQuestionService;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
 @RequestMapping("/api/boolq")
 public class BooleanQuestionController {
     

@@ -24,7 +24,7 @@ import com.questionnaire.services.NumericQuestionService;
 import com.questionnaire.services.UserService;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
 @RequestMapping("/api/numerica")
 public class NumericAnswerController {
     

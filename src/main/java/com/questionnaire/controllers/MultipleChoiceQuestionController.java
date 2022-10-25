@@ -20,7 +20,7 @@ import com.questionnaire.model.MultipleChoiceQuestion;
 import com.questionnaire.services.MultipleChoiceQuestionService;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
 @RequestMapping("/api/choiceq")
 public class MultipleChoiceQuestionController {
     

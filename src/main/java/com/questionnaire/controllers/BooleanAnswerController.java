@@ -26,7 +26,7 @@ import com.questionnaire.services.BooleanQuestionService;
 import com.questionnaire.services.UserService;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
 @RequestMapping("/api/boola")
 public class BooleanAnswerController {
     

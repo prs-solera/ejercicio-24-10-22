@@ -20,7 +20,7 @@ import com.questionnaire.model.NumericQuestion;
 import com.questionnaire.services.NumericQuestionService;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
 @RequestMapping("/api/numq")
 public class NumericQuestionController {
     
