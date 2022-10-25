@@ -43,6 +43,10 @@ public class UserService {
         }
     }
 
+    public User findByUsername(String username) {
+        return repository.findByUsername(username);
+    }
+
     public List<User> findAll() {
         return repository.findAll();
     }
