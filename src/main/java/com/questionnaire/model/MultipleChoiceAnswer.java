@@ -47,6 +47,30 @@ public class MultipleChoiceAnswer {
         this.answerDatetime = answerDatetime;
     }
 
+    public MultipleChoiceQuestion getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(MultipleChoiceQuestion question) {
+        this.question = question;
+    }
+
+    public MultipleChoiceChoice getChoice() {
+        return choice;
+    }
+
+    public void setChoice(MultipleChoiceChoice choice) {
+        this.choice = choice;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public boolean equals(Object o) {
         if (o instanceof MultipleChoiceAnswer) {
             return getId().equals(((MultipleChoiceAnswer) o).getId());
