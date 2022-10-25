@@ -29,7 +29,7 @@ public class MultipleChoiceChoice {
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
 	@JoinColumn(name = "mquestion_id", nullable = false)
-    private MultipleChoiceChoice question;
+    private MultipleChoiceQuestion question;
 
     public Integer getId() {
         return id;
@@ -47,11 +47,27 @@ public class MultipleChoiceChoice {
         this.title = title;
     }
 
+    public List<MultipleChoiceAnswer> getAnswers() {
+        return answers;
+    }
+
+    public void setAnswers(List<MultipleChoiceAnswer> answers) {
+        this.answers = answers;
+    }
+
     public boolean equals(Object o) {
         if (o instanceof MultipleChoiceChoice) {
             return getId().equals(((MultipleChoiceChoice) o).getId());
         } else {
             return false;
         }
+    }
+
+    public MultipleChoiceQuestion getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(MultipleChoiceQuestion question) {
+        this.question = question;
     }
 }
